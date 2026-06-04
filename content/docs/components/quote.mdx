@@ -1,0 +1,76 @@
+---
+title: Quote
+description: A testimonial / tweet-style Open Graph image with a large quote and an author row.
+---
+
+import { Quote } from "@/registry/ogcn/quote";
+
+<ComponentPreview endpoint="/og/component/quote" hideCode>
+  <Quote />
+</ComponentPreview>
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Command</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://ogcn.vercel.app/r/quote.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="quote" title="components/og/quote.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { ImageResponse } from "next/og";
+
+import { Quote } from "@/components/og/quote";
+
+export function GET() {
+  return new ImageResponse(
+    <Quote
+      author="Grace Hopper"
+      handle="@gracehopper"
+      quote="This is hands down the fastest way to ship beautiful OG images."
+    />,
+    { width: 1200, height: 630 },
+  );
+}
+```
+
+Pass an `avatar` URL to render a real profile image; when omitted, the author's
+initials are shown in a colored circle.
+
+## API Reference
+
+### Quote
+
+| Prop     | Type     | Default                              |
+| -------- | -------- | ------------------------------------ |
+| `quote`  | `string` | An example testimonial.              |
+| `author` | `string` | `"Grace Hopper"`                     |
+| `handle` | `string` | `"@gracehopper"`                     |
+| `avatar` | `string` | `undefined` (falls back to initials) |
+| `accent` | `string` | `"#f472b6"`                          |

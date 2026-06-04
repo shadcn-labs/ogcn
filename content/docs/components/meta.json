@@ -1,4 +1,13 @@
 {
   "title": "Components",
-  "pages": ["index", "your-component"]
+  "pages": [
+    "index",
+    "simple",
+    "grid",
+    "gradient",
+    "blog",
+    "changelog",
+    "quote",
+    "photo"
+  ]
 }

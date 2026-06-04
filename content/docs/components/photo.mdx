@@ -1,0 +1,76 @@
+---
+title: Photo
+description: A full-bleed photo Open Graph image with a dark gradient scrim and a bottom-aligned title block.
+---
+
+import { Photo } from "@/registry/ogcn/photo";
+
+<ComponentPreview endpoint="/og/component/photo" hideCode>
+  <Photo />
+</ComponentPreview>
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Command</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://ogcn.vercel.app/r/photo.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="photo" title="components/og/photo.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { ImageResponse } from "next/og";
+
+import { Photo } from "@/components/og/photo";
+
+export function GET() {
+  return new ImageResponse(
+    <Photo
+      image="https://images.unsplash.com/photo-1469474968028-56623f02e42e"
+      label="Travel"
+      title="Chasing light across the northern coast"
+    />,
+    { width: 1200, height: 630 },
+  );
+}
+```
+
+The `image` URL must be absolute and publicly reachable when rendered on the
+server. When omitted, a rich gradient is used as a fallback so the component
+always renders.
+
+## API Reference
+
+### Photo
+
+| Prop    | Type     | Default                                     |
+| ------- | -------- | ------------------------------------------- |
+| `image` | `string` | `undefined` (gradient fallback)             |
+| `label` | `string` | `"Travel"`                                  |
+| `title` | `string` | `"Chasing light across the northern coast"` |
+| `brand` | `string` | `"ogcn"`                                    |

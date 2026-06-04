@@ -1,0 +1,68 @@
+---
+title: Gradient
+description: A bold Open Graph image with a vibrant gradient backdrop and a frosted glass content panel.
+---
+
+import { Gradient } from "@/registry/ogcn/gradient";
+
+<ComponentPreview endpoint="/og/component/gradient" hideCode>
+  <Gradient />
+</ComponentPreview>
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Command</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://ogcn.vercel.app/r/gradient.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="gradient" title="components/og/gradient.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { ImageResponse } from "next/og";
+
+import { Gradient } from "@/components/og/gradient";
+
+export function GET() {
+  return new ImageResponse(
+    <Gradient label="Announcing" title="Ship a stunning social card" />,
+    { width: 1200, height: 630 },
+  );
+}
+```
+
+## API Reference
+
+### Gradient
+
+| Prop          | Type     | Default                               |
+| ------------- | -------- | ------------------------------------- |
+| `label`       | `string` | `"Announcing"`                        |
+| `title`       | `string` | `"Ship a stunning social card"`       |
+| `description` | `string` | A short supporting line.              |
+| `gradient`    | `string` | A purple → pink → amber CSS gradient. |

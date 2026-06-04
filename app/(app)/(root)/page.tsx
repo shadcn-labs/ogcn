@@ -1,8 +1,12 @@
 import { CommandBox } from "@/components/command-box";
+import { ComponentPreview } from "@/components/component-preview";
 import { HomeCtas } from "@/components/home-ctas";
 import { PageTransition } from "@/components/page-transition";
 import { ROUTES } from "@/constants/routes";
-import { YourComponent } from "@/registry/new-york/your-component";
+import { Blog } from "@/registry/ogcn/blog";
+import { Gradient } from "@/registry/ogcn/gradient";
+import { Grid } from "@/registry/ogcn/grid";
+import { Simple } from "@/registry/ogcn/simple";
 import { BreadcrumbJsonLd } from "@/seo/json-ld";
 
 export const dynamic = "force-static";
@@ -15,13 +19,13 @@ export default function IndexPage() {
       <PageTransition>
         <section className="container-wrapper relative">
           <div className="container flex flex-col items-center gap-4 py-16 text-center md:py-20 lg:py-24">
-            <h1 className="max-w-7xl text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl from-foreground via-foreground to-foreground/65 bg-linear-to-b bg-clip-text text-transparent">
-              startercn
+            <h1 className="max-w-7xl bg-linear-to-b from-foreground via-foreground to-foreground/65 bg-clip-text text-4xl font-bold tracking-tight text-transparent sm:text-5xl md:text-6xl">
+              Beautiful OG images, on Satori
             </h1>
 
             <p className="max-w-2xl text-lg text-muted-foreground sm:text-xl">
-              A starter kit for building and publishing your own shadcn registry
-              components. Fork, customize, and deploy.
+              ogcn is a shadcn registry of Open Graph image components. Copy,
+              paste, and ship social cards rendered with <code>next/og</code>.
             </p>
 
             <CommandBox className="mt-4 w-full max-w-xl" />
@@ -30,9 +34,20 @@ export default function IndexPage() {
           </div>
         </section>
 
-        <section className="container-wrapper pb-8 lg:pb-12">
-          <div className="container flex flex-col items-center gap-6">
-            <YourComponent className="w-full max-w-md" />
+        <section className="container-wrapper pb-12 lg:pb-20">
+          <div className="container grid gap-6 sm:grid-cols-2">
+            <ComponentPreview>
+              <Gradient />
+            </ComponentPreview>
+            <ComponentPreview>
+              <Simple />
+            </ComponentPreview>
+            <ComponentPreview>
+              <Blog />
+            </ComponentPreview>
+            <ComponentPreview>
+              <Grid />
+            </ComponentPreview>
           </div>
         </section>
       </PageTransition>

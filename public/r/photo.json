@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "photo",
+  "title": "Photo",
+  "description": "A full-bleed photo Open Graph image with a dark gradient scrim and a bottom-aligned title block.",
+  "files": [
+    {
+      "path": "registry/ogcn/photo.tsx",
+      "content": "/**\n * photo\n *\n * A full-bleed photo Open Graph image with a dark gradient scrim and bottom\n * aligned title block.\n *\n * Built for Satori / `next/og` — inline styles only. Pass an `image` URL for\n * the background; when omitted a rich gradient is used as a fallback so the\n * component always renders.\n */\n\nexport interface PhotoProps {\n  /** Background image URL. Must be absolute when rendered on the server. */\n  image?: string;\n  label?: string;\n  title?: string;\n  brand?: string;\n}\n\nexport const Photo = ({\n  image,\n  label = \"Travel\",\n  title = \"Chasing light across the northern coast\",\n  brand = \"ogcn\",\n}: PhotoProps) => {\n  const fallback =\n    \"linear-gradient(135deg, #0f172a 0%, #1e3a8a 45%, #7c3aed 100%)\";\n\n  return (\n    <div\n      style={{\n        backgroundColor: \"#0a0a0a\",\n        backgroundImage: image ? `url(${image})` : fallback,\n        backgroundPosition: \"center\",\n        backgroundSize: \"1200px 630px\",\n        color: \"#ffffff\",\n        display: \"flex\",\n        flexDirection: \"column\",\n        height: \"100%\",\n        justifyContent: \"flex-end\",\n        padding: \"80px\",\n        position: \"relative\",\n        width: \"100%\",\n      }}\n    >\n      {/* Dark scrim so text stays readable over any photo */}\n      <div\n        style={{\n          backgroundImage:\n            \"linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.35) 55%, rgba(0,0,0,0.85) 100%)\",\n          bottom: 0,\n          left: 0,\n          position: \"absolute\",\n          right: 0,\n          top: 0,\n        }}\n      />\n\n      <div\n        style={{\n          alignSelf: \"flex-start\",\n          backgroundColor: \"rgba(255,255,255,0.12)\",\n          border: \"1px solid rgba(255,255,255,0.4)\",\n          borderRadius: \"999px\",\n          display: \"flex\",\n          fontSize: \"26px\",\n          fontWeight: 600,\n          letterSpacing: \"0.04em\",\n          padding: \"10px 22px\",\n          textTransform: \"uppercase\",\n        }}\n      >\n        {label}\n      </div>\n\n      <div\n        style={{\n          display: \"flex\",\n          fontSize: title.length > 36 ? 72 : 88,\n          fontWeight: 700,\n          letterSpacing: \"-0.03em\",\n          lineHeight: 1.02,\n          marginTop: \"28px\",\n          maxWidth: \"1000px\",\n          textShadow: \"0 2px 24px rgba(0,0,0,0.5)\",\n        }}\n      >\n        {title}\n      </div>\n\n      <div\n        style={{\n          color: \"rgba(255,255,255,0.85)\",\n          display: \"flex\",\n          fontSize: \"28px\",\n          fontWeight: 600,\n          marginTop: \"32px\",\n        }}\n      >\n        {brand}\n      </div>\n    </div>\n  );\n};\n",
+      "type": "registry:component",
+      "target": "components/og/photo.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

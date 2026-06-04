@@ -8,7 +8,10 @@ import { source } from "@/lib/source";
 
 const getFolder = (name: string): PageTreeFolder | undefined => {
   for (const node of source.pageTree.children) {
-    if (node.type === "folder" && node.name === name) {
+    if (
+      node.type === "folder" &&
+      (node.name === name || node.$id === "components")
+    ) {
       return node;
     }
   }

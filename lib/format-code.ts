@@ -44,10 +44,7 @@ type DisplayTransformer = (opts: {
 export const formatCode = async (code: string) => {
   let formattedCode = code;
 
-  formattedCode = formattedCode.replaceAll(
-    "@/registry/new-york/",
-    "@/components/"
-  );
+  formattedCode = formattedCode.replaceAll("@/registry/ogcn/", "@/components/");
 
   formattedCode = formattedCode.replaceAll("export default", "export");
 

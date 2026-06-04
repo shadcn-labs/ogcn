@@ -1,0 +1,68 @@
+---
+title: Grid
+description: A framed, technical Open Graph image with a dashed border grid and a corner brand mark.
+---
+
+import { Grid } from "@/registry/ogcn/grid";
+
+<ComponentPreview endpoint="/og/component/grid" hideCode>
+  <Grid />
+</ComponentPreview>
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Command</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://ogcn.vercel.app/r/grid.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="grid" title="components/og/grid.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { ImageResponse } from "next/og";
+
+import { Grid } from "@/components/og/grid";
+
+export function GET() {
+  return new ImageResponse(<Grid title="Build your own OG images" />, {
+    width: 1200,
+    height: 630,
+  });
+}
+```
+
+## API Reference
+
+### Grid
+
+| Prop          | Type     | Default                      |
+| ------------- | -------- | ---------------------------- |
+| `title`       | `string` | `"Build your own OG images"` |
+| `description` | `string` | A short supporting line.     |
+| `brand`       | `string` | `"ogcn"`                     |
+| `accent`      | `string` | `"#22d3ee"`                  |

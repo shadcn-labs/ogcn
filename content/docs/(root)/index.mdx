@@ -1,44 +1,70 @@
 ---
 title: Introduction
-description: A template for building and publishing your own shadcn registry components.
+description: ogcn is a shadcn registry of beautiful Open Graph image components built on Satori.
 ---
 
-A **ready-to-use template** for creating and publishing custom components to the [shadcn registry](https://ui.shadcn.com/docs/registry).
+**ogcn** is a [shadcn registry](https://ui.shadcn.com/docs/registry) of beautiful
+**Open Graph image components**. Every component is a plain React component that
+renders to a real PNG through Satori and the [`next/og`](https://nextjs.org/docs/app/api-reference/functions/image-response)
+runtime.
+
+Install a component with the shadcn CLI, drop it into an `ImageResponse`, and you
+have a polished social card in minutes — fully owned, fully editable code.
+
+```bash
+npx shadcn@latest add https://ogcn.vercel.app/r/simple.json
+```
+
+## Why these components are different
+
+The components are authored with the **Satori-compatible CSS subset** — flexbox
+layouts and inline styles only. That single constraint unlocks something nice:
+the exact same component renders both as a server-generated PNG **and** as a
+live, scaled DOM preview in these docs. What you see in the gallery is what
+Satori produces.
 
 ## What You Get
 
-- 📦 **Simple structure** - One component file + one config file
+- 🖼️ **7 OG components** - Minimal, grid, gradient, blog, changelog, quote, and photo
+- ⚡ **Built on Satori** - Renders with the `next/og` runtime at the edge
+- 👀 **Live previews** - Faithful, instant DOM previews of every component
+- 🎨 **Fully customizable** - Sensible props with defaults; own the code
+- 📦 **shadcn compatible** - Installs with `npx shadcn add`
 - 📚 **Documentation site** - Powered by Fumadocs
-- 🎨 **Registry compatible** - Works with `npx shadcn add`
-- 🤖 **[Agent ready](https://www.mintlify.com/score/startercn)** - Ships with `llms.txt`, `llms-full.txt`, API catalog routes, and agent skill discovery endpoints
-- 🔊 **[Web audio feedback](https://audio.raphaelsalaja.com/)** - Built-in interaction sounds powered by `@web-kits/audio`
-- 📳 **[Web haptics](https://haptics.lochie.me/)** - Optional haptic feedback for supported devices via `web-haptics`
-- ✨ **[Motion animations](https://motion.dev/)** - Uses `motion` for animated UI states and transitions
-- 🎯 **[Animated icons](https://lucide-animated.com/)** - Includes reusable animated icons for buttons, sharing, and navigation
-- 🔄 **[View transitions](https://nextjs.org/docs/app/api-reference/config/next-config-js/viewTransition)** - Uses Next.js view transitions for smoother page changes
-- 🚀 **Deploy ready** - Deploy anywhere
 
 ## Tech Stack
 
-- `Next.js 16` + App Router
+- `Next.js 16` + App Router (`next/og` / Satori)
 - `React 19`
 - `Tailwind CSS 4`
 - `Fumadocs`
-- `motion`
-- `@web-kits/audio`
-- `web-haptics`
-- `shiki` + `rehype-pretty-code`
+- `shadcn` registry
 
 ## How It Works
 
-1. Edit your component at `registry/new-york/your-component.tsx`
-2. Update `registry.json` with your component name and details
-3. Run `pnpm registry:build`
+1. Each component lives at `registry/ogcn/<name>.tsx`
+2. It is listed in `registry.json`
+3. `pnpm registry:build` emits installable JSON to `public/r`
 
-That's it. Deploy your app and users can install your component:
+Users then install any component:
 
 ```bash
-npx shadcn@latest add https://your-site.com/r/your-component.json
+npx shadcn@latest add https://ogcn.vercel.app/r/blog.json
+```
+
+…and render it on the server:
+
+```tsx title="app/og/route.tsx"
+import { ImageResponse } from "next/og";
+
+import { Blog } from "@/components/og/blog";
+
+export function GET() {
+  return new ImageResponse(<Blog title="Hello world" />, {
+    width: 1200,
+    height: 630,
+  });
+}
 ```
 
 ## FAQ
@@ -47,33 +73,39 @@ npx shadcn@latest add https://your-site.com/r/your-component.json
 
 <AccordionItem value="faq-1">
 <AccordionTrigger>
-Why copy/paste instead of npm packages?
+What is Satori?
 </AccordionTrigger>
 <AccordionContent>
 
-The shadcn philosophy gives you **ownership** of the code. You can customize components to your exact needs without fighting library constraints.
+[Satori](https://github.com/vercel/satori) is Vercel's library that converts
+HTML and CSS into SVG. It powers `next/og`'s `ImageResponse`. It supports a
+subset of CSS — primarily flexbox — which is why every component here uses
+inline flex styles.
 
 </AccordionContent>
 </AccordionItem>
 
 <AccordionItem value="faq-2">
 <AccordionTrigger>
-Which frameworks are supported?
+Can I preview these in the browser without a server?
 </AccordionTrigger>
 <AccordionContent>
 
-Any React framework: Next.js, Remix, Astro, Gatsby, Vite, etc.
+Yes. Because the components only use the Satori-compatible CSS subset, they are
+valid DOM too. The docs render each one as a scaled `div`, so previews are
+instant and need no image generation.
 
 </AccordionContent>
 </AccordionItem>
 
 <AccordionItem value="faq-3">
 <AccordionTrigger>
-Can I publish multiple components?
+Can I add my own components?
 </AccordionTrigger>
 <AccordionContent>
 
-Yes! Add more files to `registry/new-york/` and list them in `registry.json`.
+Absolutely. Add a file to `registry/ogcn/`, list it in `registry.json`,
+write an MDX doc, and run `pnpm registry:build`.
 
 </AccordionContent>
 </AccordionItem>

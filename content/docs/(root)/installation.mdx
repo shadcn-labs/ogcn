@@ -1,71 +1,110 @@
 ---
 title: Installation
-description: How to use this template to build your own shadcn component.
+description: Install an ogcn component and render it as an Open Graph image.
 ---
 
-## Building Your Component
+## Install a component
 
-### 1. Fork the Template
-
-Click "Use this template" on [GitHub](https://github.com/mehmetpekcan/shadcn-registry-kit).
-
-### 2. Install Dependencies
+Pick a component from the [gallery](/docs/components) and add it with the shadcn
+CLI. The component is copied into your project at `components/og/<name>.tsx`.
 
 ```bash
-pnpm install
+npx shadcn@latest add https://ogcn.vercel.app/r/simple.json
 ```
 
-### 3. Create Your Component
+## Render it as an OG image
 
-Replace the placeholder at `registry/new-york/your-component.tsx`:
+Create a route handler and return an `ImageResponse` from `next/og`. Satori
+renders the component to a PNG at request time (or build time, if you make the
+route static).
 
-```tsx
-import { forwardRef, HTMLAttributes } from "react";
-import { cn } from "@/lib/utils";
+```tsx title="app/og/route.tsx"
+import { ImageResponse } from "next/og";
 
-export interface MyButtonProps extends HTMLAttributes<HTMLButtonElement> {
-  variant?: "default" | "outline";
+import { Simple } from "@/components/og/simple";
+
+export function GET(request: Request) {
+  const { searchParams } = new URL(request.url);
+
+  return new ImageResponse(
+    <Simple
+      title={searchParams.get("title") ?? undefined}
+      description={searchParams.get("description") ?? undefined}
+    />,
+    { width: 1200, height: 630 }
+  );
 }
-
-const MyButton = forwardRef<HTMLButtonElement, MyButtonProps>(
-  ({ className, variant = "default", ...props }, ref) => {
-    return (
-      <button
-        ref={ref}
-        className={cn(
-          "rounded-md px-4 py-2 font-medium",
-          variant === "default" && "bg-primary text-primary-foreground",
-          variant === "outline" && "border border-input",
-          className
-        )}
-        {...props}
-      />
-    );
-  }
-);
-
-MyButton.displayName = "MyButton";
-
-export { MyButton };
 ```
 
-### 4. Update registry.json
+## Wire it into your metadata
 
-```json
+Point your page's Open Graph metadata at the route:
+
+```tsx title="app/page.tsx"
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  openGraph: {
+    images: ["/og?title=Hello%20world"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/og?title=Hello%20world"],
+  },
+};
+```
+
+## Custom fonts (optional)
+
+Satori uses the first font you provide as the default. To ship a custom
+typeface, fetch the font and pass it to `ImageResponse`:
+
+```tsx title="app/og/route.tsx"
+import { ImageResponse } from "next/og";
+
+import { Simple } from "@/components/og/simple";
+
+export async function GET() {
+  const font = await fetch(
+    new URL("./Inter-SemiBold.ttf", import.meta.url)
+  ).then((res) => res.arrayBuffer());
+
+  return new ImageResponse(<Simple />, {
+    width: 1200,
+    height: 630,
+    fonts: [{ name: "Inter", data: font, weight: 600, style: "normal" }],
+  });
+}
+```
+
+---
+
+## Building your own registry
+
+ogcn is a normal shadcn registry, so you can extend it:
+
+### 1. Add a component
+
+Create `registry/ogcn/yours.tsx`. Use **flexbox + inline styles only** so
+it renders in both Satori and the browser.
+
+### 2. Register it
+
+```json title="registry.json"
 {
-  "name": "your-name/your-registry",
-  "homepage": "https://your-site.com",
+  "name": "ogcn",
+  "homepage": "https://ogcn.vercel.app",
   "items": [
     {
-      "name": "my-button",
-      "type": "registry:ui",
-      "title": "My Button",
-      "description": "A custom button component.",
+      "name": "yours",
+      "type": "registry:component",
+      "title": "Yours",
+      "description": "Your custom OG component.",
       "files": [
         {
-          "path": "registry/new-york/my-button.tsx",
-          "type": "registry:ui",
-          "target": "components/ui/my-button.tsx"
+          "path": "registry/ogcn/yours.tsx",
+          "type": "registry:component",
+          "target": "components/og/yours.tsx"
         }
       ]
     }
@@ -73,31 +112,9 @@ export { MyButton };
 }
 ```
 
-### 5. Build & Deploy
+### 3. Build & deploy
 
 ```bash
 pnpm registry:build
 pnpm build
-```
-
-Deploy your app and your component is live!
-
----
-
-## Installing Components
-
-To install a component from any registry built with this template:
-
-```bash
-npx shadcn@latest add https://example.com/r/my-button.json
-```
-
-Then use it:
-
-```tsx
-import { MyButton } from "@/components/ui/my-button";
-
-export function Demo() {
-  return <MyButton variant="outline">Click me</MyButton>;
-}
 ```

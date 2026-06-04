@@ -1,0 +1,79 @@
+---
+title: Blog
+description: An article Open Graph image with a category badge, headline, excerpt, and author row.
+---
+
+import { Blog } from "@/registry/ogcn/blog";
+
+<ComponentPreview endpoint="/og/component/blog" hideCode>
+  <Blog />
+</ComponentPreview>
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Command</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://ogcn.vercel.app/r/blog.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="blog" title="components/og/blog.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { ImageResponse } from "next/og";
+
+import { Blog } from "@/components/og/blog";
+
+export function GET() {
+  return new ImageResponse(
+    <Blog
+      author="Ada Lovelace"
+      category="Engineering"
+      meta="Jun 5, 2026 · 6 min read"
+      title="How we generate social images at the edge"
+    />,
+    { width: 1200, height: 630 },
+  );
+}
+```
+
+Pass an `avatar` URL to render a real profile image; when omitted, the author's
+initials are shown in a colored circle. On the server the URL must be absolute.
+
+## API Reference
+
+### Blog
+
+| Prop       | Type     | Default                                       |
+| ---------- | -------- | --------------------------------------------- |
+| `category` | `string` | `"Engineering"`                               |
+| `title`    | `string` | `"How we generate social images at the edge"` |
+| `excerpt`  | `string` | A short supporting line.                      |
+| `author`   | `string` | `"Ada Lovelace"`                              |
+| `meta`     | `string` | `"Jun 5, 2026 · 6 min read"`                  |
+| `avatar`   | `string` | `undefined` (falls back to initials)          |
+| `accent`   | `string` | `"#7c3aed"`                                   |

@@ -1,9 +1,8 @@
 "use client";
 
-import { MenuIcon, SquarePenIcon } from "lucide-react";
+import { MenuIcon } from "lucide-react";
 import { useCallback, useEffect, useMemo, useState } from "react";
 
-import { DiscordIcon, XIcon } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -11,11 +10,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Separator } from "@/components/ui/separator";
-import { GITHUB, LINK } from "@/constants/links";
 import { useFeedback } from "@/hooks/use-feedback";
-import { DOCS_DIR } from "@/lib/docs";
-import { trackEvent } from "@/lib/events";
 import { cn } from "@/lib/utils";
 
 const headingById = (id: string): Element | null =>

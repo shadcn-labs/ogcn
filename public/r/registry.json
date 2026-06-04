@@ -1,17 +1,96 @@
 {
-  "name": "shadcn/registry-kit",
-  "homepage": "https://shadcn-registry-kit.vercel.app",
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "ogcn",
+  "homepage": "https://ogcn.vercel.app",
   "items": [
     {
-      "name": "your-component",
-      "type": "registry:ui",
-      "title": "Your Component",
-      "description": "A placeholder component. Replace this with your custom shadcn component.",
+      "name": "simple",
+      "type": "registry:component",
+      "title": "Simple",
+      "description": "A minimal, centered Open Graph image with an eyebrow label, title, description, and brand mark.",
       "files": [
         {
-          "path": "registry/new-york/your-component.tsx",
-          "type": "registry:ui",
-          "target": "components/ui/your-component.tsx"
+          "path": "registry/ogcn/simple.tsx",
+          "type": "registry:component",
+          "target": "components/og/simple.tsx"
+        }
+      ]
+    },
+    {
+      "name": "grid",
+      "type": "registry:component",
+      "title": "Grid",
+      "description": "A framed, technical Open Graph image with a dashed border grid and a corner brand mark.",
+      "files": [
+        {
+          "path": "registry/ogcn/grid.tsx",
+          "type": "registry:component",
+          "target": "components/og/grid.tsx"
+        }
+      ]
+    },
+    {
+      "name": "gradient",
+      "type": "registry:component",
+      "title": "Gradient",
+      "description": "A bold Open Graph image with a vibrant gradient backdrop and a frosted glass content panel.",
+      "files": [
+        {
+          "path": "registry/ogcn/gradient.tsx",
+          "type": "registry:component",
+          "target": "components/og/gradient.tsx"
+        }
+      ]
+    },
+    {
+      "name": "blog",
+      "type": "registry:component",
+      "title": "Blog",
+      "description": "An article Open Graph image with a category badge, headline, excerpt, and author row.",
+      "files": [
+        {
+          "path": "registry/ogcn/blog.tsx",
+          "type": "registry:component",
+          "target": "components/og/blog.tsx"
+        }
+      ]
+    },
+    {
+      "name": "changelog",
+      "type": "registry:component",
+      "title": "Changelog",
+      "description": "A release Open Graph image with a version pill, date, title, and a checklist of highlights.",
+      "files": [
+        {
+          "path": "registry/ogcn/changelog.tsx",
+          "type": "registry:component",
+          "target": "components/og/changelog.tsx"
+        }
+      ]
+    },
+    {
+      "name": "quote",
+      "type": "registry:component",
+      "title": "Quote",
+      "description": "A testimonial / tweet-style Open Graph image with a large quote and an author row.",
+      "files": [
+        {
+          "path": "registry/ogcn/quote.tsx",
+          "type": "registry:component",
+          "target": "components/og/quote.tsx"
+        }
+      ]
+    },
+    {
+      "name": "photo",
+      "type": "registry:component",
+      "title": "Photo",
+      "description": "A full-bleed photo Open Graph image with a dark gradient scrim and a bottom-aligned title block.",
+      "files": [
+        {
+          "path": "registry/ogcn/photo.tsx",
+          "type": "registry:component",
+          "target": "components/og/photo.tsx"
         }
       ]
     }

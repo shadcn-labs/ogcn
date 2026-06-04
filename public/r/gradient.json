@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "gradient",
+  "title": "Gradient",
+  "description": "A bold Open Graph image with a vibrant gradient backdrop and a frosted glass content panel.",
+  "files": [
+    {
+      "path": "registry/ogcn/gradient.tsx",
+      "content": "/**\n * gradient\n *\n * A bold, colorful Open Graph image with a vibrant gradient backdrop and a\n * frosted glass content panel.\n *\n * Built for Satori / `next/og` — inline styles only.\n */\n\nexport interface GradientProps {\n  label?: string;\n  title?: string;\n  description?: string;\n  /** CSS gradient applied to the background. */\n  gradient?: string;\n}\n\nexport const Gradient = ({\n  label = \"Announcing\",\n  title = \"Ship a stunning social card\",\n  description = \"Drop-in OG image components with a single component import.\",\n  gradient = \"linear-gradient(135deg, #6d28d9 0%, #db2777 50%, #f59e0b 100%)\",\n}: GradientProps) => (\n  <div\n    style={{\n      backgroundImage: gradient,\n      color: \"#ffffff\",\n      display: \"flex\",\n      flexDirection: \"column\",\n      height: \"100%\",\n      justifyContent: \"center\",\n      padding: \"80px\",\n      width: \"100%\",\n    }}\n  >\n    <div\n      style={{\n        backgroundColor: \"rgba(255,255,255,0.12)\",\n        border: \"1px solid rgba(255,255,255,0.25)\",\n        borderRadius: \"36px\",\n        display: \"flex\",\n        flexDirection: \"column\",\n        padding: \"64px\",\n      }}\n    >\n      <div\n        style={{\n          alignSelf: \"flex-start\",\n          backgroundColor: \"rgba(0,0,0,0.25)\",\n          borderRadius: \"999px\",\n          display: \"flex\",\n          fontSize: \"26px\",\n          fontWeight: 600,\n          letterSpacing: \"0.02em\",\n          padding: \"10px 22px\",\n        }}\n      >\n        {label}\n      </div>\n\n      <div\n        style={{\n          display: \"flex\",\n          fontSize: title.length > 36 ? 76 : 92,\n          fontWeight: 800,\n          letterSpacing: \"-0.04em\",\n          lineHeight: 1,\n          marginTop: \"36px\",\n          maxWidth: \"920px\",\n        }}\n      >\n        {title}\n      </div>\n\n      <div\n        style={{\n          color: \"rgba(255,255,255,0.9)\",\n          display: \"flex\",\n          fontSize: \"36px\",\n          lineHeight: 1.35,\n          marginTop: \"32px\",\n          maxWidth: \"820px\",\n        }}\n      >\n        {description}\n      </div>\n    </div>\n  </div>\n);\n",
+      "type": "registry:component",
+      "target": "components/og/gradient.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,78 @@
+---
+title: Changelog
+description: A release Open Graph image with a version pill, date, title, and a checklist of highlights.
+---
+
+import { Changelog } from "@/registry/ogcn/changelog";
+
+<ComponentPreview endpoint="/og/component/changelog" hideCode>
+  <Changelog />
+</ComponentPreview>
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Command</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://ogcn.vercel.app/r/changelog.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="changelog" title="components/og/changelog.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { ImageResponse } from "next/og";
+
+import { Changelog } from "@/components/og/changelog";
+
+export function GET() {
+  return new ImageResponse(
+    <Changelog
+      date="June 2026"
+      items={["New OG components", "Live previews", "One-line install"]}
+      title="What's new"
+      version="v2.0"
+    />,
+    { width: 1200, height: 630 },
+  );
+}
+```
+
+When driving the component from the `/og/component/changelog` route, pass
+highlights as a pipe-delimited list: `?items=First|Second|Third`.
+
+## API Reference
+
+### Changelog
+
+| Prop      | Type       | Default                                 |
+| --------- | ---------- | --------------------------------------- |
+| `version` | `string`   | `"v2.0"`                                |
+| `date`    | `string`   | `"June 2026"`                           |
+| `title`   | `string`   | `"What's new"`                          |
+| `items`   | `string[]` | Three example highlights (max 4 shown). |
+| `brand`   | `string`   | `"ogcn"`                                |
+| `accent`  | `string`   | `"#34d399"`                             |
