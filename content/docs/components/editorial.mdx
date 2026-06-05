@@ -1,0 +1,75 @@
+---
+title: Editorial
+description: A poster-style Open Graph image with oversized display type and a large faint ghost word set behind the content.
+---
+
+import { Editorial } from "@/registry/ogcn/editorial";
+
+<ComponentPreview hideCode>
+  <Editorial />
+</ComponentPreview>
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Command</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://ogcn.vercel.app/r/editorial.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="editorial" title="components/og/editorial.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { ImageResponse } from "next/og";
+
+import { Editorial } from "@/components/og/editorial";
+
+export function GET() {
+  return new ImageResponse(
+    <Editorial
+      kicker="Feature"
+      title="Designing at the edge of the canvas"
+      author="The OG Times"
+      meta="Issue 04"
+    />,
+    { width: 1200, height: 630 }
+  );
+}
+```
+
+## API Reference
+
+### Editorial
+
+| Prop     | Type     | Default               |
+| -------- | -------- | --------------------- |
+| `kicker` | `string` | `"Essay"`             |
+| `title`  | `string` | An example headline.  |
+| `author` | `string` | `"ogcn"`              |
+| `meta`   | `string` | `"Issue 04"`          |
+| `ghost`  | `string` | First word of `title` |
+| `accent` | `string` | `"#e11d48"`           |

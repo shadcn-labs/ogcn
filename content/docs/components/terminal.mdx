@@ -1,0 +1,72 @@
+---
+title: Terminal
+description: A minimal, technical Open Graph image with a wordmark and accent side-bar above a large wide-tracked uppercase headline.
+---
+
+import { Terminal } from "@/registry/ogcn/terminal";
+
+<ComponentPreview hideCode>
+  <Terminal />
+</ComponentPreview>
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Command</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://ogcn.vercel.app/r/terminal.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="terminal" title="components/og/terminal.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { ImageResponse } from "next/og";
+
+import { Terminal } from "@/components/og/terminal";
+
+export function GET() {
+  return new ImageResponse(
+    <Terminal
+      brand="acme"
+      title="Now in public beta"
+      caption="npm i @acme/sdk"
+    />,
+    { width: 1200, height: 630 }
+  );
+}
+```
+
+## API Reference
+
+### Terminal
+
+| Prop      | Type     | Default                        |
+| --------- | -------- | ------------------------------ |
+| `brand`   | `string` | `"ogcn"`                       |
+| `title`   | `string` | `"Ship beautiful OG images"`   |
+| `caption` | `string` | `"npx shadcn@latest add ogcn"` |
+| `accent`  | `string` | `"#22c55e"`                    |

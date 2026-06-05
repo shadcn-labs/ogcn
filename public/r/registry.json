@@ -93,6 +93,110 @@
           "target": "components/og/photo.tsx"
         }
       ]
+    },
+    {
+      "name": "product",
+      "type": "registry:component",
+      "title": "Product",
+      "description": "A two-column product Open Graph image with brand and copy on the left, a product shot on the right, and a price pill.",
+      "files": [
+        {
+          "path": "registry/ogcn/product.tsx",
+          "type": "registry:component",
+          "target": "components/og/product.tsx"
+        }
+      ]
+    },
+    {
+      "name": "profile",
+      "type": "registry:component",
+      "title": "Profile",
+      "description": "A personal / portfolio Open Graph image with a circular avatar beside a name, role, bio, and website pill.",
+      "files": [
+        {
+          "path": "registry/ogcn/profile.tsx",
+          "type": "registry:component",
+          "target": "components/og/profile.tsx"
+        }
+      ]
+    },
+    {
+      "name": "event",
+      "type": "registry:component",
+      "title": "Event",
+      "description": "An event / launch Open Graph image with an eyebrow label, large title, and a date · location footer row.",
+      "files": [
+        {
+          "path": "registry/ogcn/event.tsx",
+          "type": "registry:component",
+          "target": "components/og/event.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stat",
+      "type": "registry:component",
+      "title": "Stat",
+      "description": "A metric / dashboard Open Graph image with an eyebrow label, an oversized number, a trend pill, and a caption.",
+      "files": [
+        {
+          "path": "registry/ogcn/stat.tsx",
+          "type": "registry:component",
+          "target": "components/og/stat.tsx"
+        }
+      ]
+    },
+    {
+      "name": "logo",
+      "type": "registry:component",
+      "title": "Logo",
+      "description": "A centered brand Open Graph image with a logo tile, a large wordmark, and an optional tagline on a soft gradient field.",
+      "files": [
+        {
+          "path": "registry/ogcn/logo.tsx",
+          "type": "registry:component",
+          "target": "components/og/logo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "terminal",
+      "type": "registry:component",
+      "title": "Terminal",
+      "description": "A minimal, technical Open Graph image with a wordmark and accent side-bar above a large wide-tracked uppercase headline.",
+      "files": [
+        {
+          "path": "registry/ogcn/terminal.tsx",
+          "type": "registry:component",
+          "target": "components/og/terminal.tsx"
+        }
+      ]
+    },
+    {
+      "name": "editorial",
+      "type": "registry:component",
+      "title": "Editorial",
+      "description": "A poster-style Open Graph image with oversized display type and a large faint ghost word set behind the content.",
+      "files": [
+        {
+          "path": "registry/ogcn/editorial.tsx",
+          "type": "registry:component",
+          "target": "components/og/editorial.tsx"
+        }
+      ]
+    },
+    {
+      "name": "showcase",
+      "type": "registry:component",
+      "title": "Showcase",
+      "description": "A product-showcase Open Graph image with a centered headline above a faux browser window and a minimal dashboard UI.",
+      "files": [
+        {
+          "path": "registry/ogcn/showcase.tsx",
+          "type": "registry:component",
+          "target": "components/og/showcase.tsx"
+        }
+      ]
     }
   ]
 }

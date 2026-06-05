@@ -5,7 +5,7 @@ description: A release Open Graph image with a version pill, date, title, and a 
 
 import { Changelog } from "@/registry/ogcn/changelog";
 
-<ComponentPreview endpoint="/og/component/changelog" hideCode>
+<ComponentPreview hideCode>
   <Changelog />
 </ComponentPreview>
 
@@ -60,9 +60,6 @@ export function GET() {
   );
 }
 ```
-
-When driving the component from the `/og/component/changelog` route, pass
-highlights as a pipe-delimited list: `?items=First|Second|Third`.
 
 ## API Reference
 

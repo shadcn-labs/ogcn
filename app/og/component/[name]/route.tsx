@@ -2,11 +2,19 @@ import { ImageResponse } from "next/og";
 
 import { Blog } from "@/registry/ogcn/blog";
 import { Changelog } from "@/registry/ogcn/changelog";
+import { Editorial } from "@/registry/ogcn/editorial";
+import { Event } from "@/registry/ogcn/event";
 import { Gradient } from "@/registry/ogcn/gradient";
 import { Grid } from "@/registry/ogcn/grid";
+import { Logo } from "@/registry/ogcn/logo";
 import { Photo } from "@/registry/ogcn/photo";
+import { Product } from "@/registry/ogcn/product";
+import { Profile } from "@/registry/ogcn/profile";
 import { Quote } from "@/registry/ogcn/quote";
+import { Showcase } from "@/registry/ogcn/showcase";
 import { Simple } from "@/registry/ogcn/simple";
+import { Stat } from "@/registry/ogcn/stat";
+import { Terminal } from "@/registry/ogcn/terminal";
 
 const SIZE = { height: 630, width: 1200 };
 
@@ -90,6 +98,97 @@ const renderComponent = (
           image={get("image")}
           label={get("label")}
           title={get("title")}
+        />
+      );
+    }
+    case "product": {
+      return (
+        <Product
+          accent={get("accent")}
+          brand={get("brand")}
+          description={get("description")}
+          image={get("image")}
+          price={get("price")}
+          title={get("title")}
+        />
+      );
+    }
+    case "profile": {
+      return (
+        <Profile
+          accent={get("accent")}
+          avatar={get("avatar")}
+          bio={get("bio")}
+          name={get("name")}
+          role={get("role")}
+          website={get("website")}
+        />
+      );
+    }
+    case "event": {
+      return (
+        <Event
+          accent={get("accent")}
+          brand={get("brand")}
+          date={get("date")}
+          label={get("label")}
+          location={get("location")}
+          title={get("title")}
+        />
+      );
+    }
+    case "stat": {
+      return (
+        <Stat
+          accent={get("accent")}
+          brand={get("brand")}
+          caption={get("caption")}
+          label={get("label")}
+          trend={get("trend")}
+          value={get("value")}
+        />
+      );
+    }
+    case "logo": {
+      return (
+        <Logo
+          accent={get("accent")}
+          background={get("background")}
+          brand={get("brand")}
+          monogram={get("monogram")}
+          tagline={get("tagline")}
+        />
+      );
+    }
+    case "terminal": {
+      return (
+        <Terminal
+          accent={get("accent")}
+          brand={get("brand")}
+          caption={get("caption")}
+          title={get("title")}
+        />
+      );
+    }
+    case "editorial": {
+      return (
+        <Editorial
+          accent={get("accent")}
+          author={get("author")}
+          ghost={get("ghost")}
+          kicker={get("kicker")}
+          meta={get("meta")}
+          title={get("title")}
+        />
+      );
+    }
+    case "showcase": {
+      return (
+        <Showcase
+          accent={get("accent")}
+          subtitle={get("subtitle")}
+          title={get("title")}
+          url={get("url")}
         />
       );
     }

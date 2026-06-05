@@ -1,0 +1,75 @@
+---
+title: Event
+description: An event / launch Open Graph image with an eyebrow label, large title, and a date · location footer row.
+---
+
+import { Event } from "@/registry/ogcn/event";
+
+<ComponentPreview hideCode>
+  <Event />
+</ComponentPreview>
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Command</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://ogcn.vercel.app/r/event.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="event" title="components/og/event.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { ImageResponse } from "next/og";
+
+import { Event } from "@/components/og/event";
+
+export function GET() {
+  return new ImageResponse(
+    <Event
+      label="Webinar"
+      title="Shipping beautiful OG images at scale"
+      date="Jun 5, 2026 · 10:00 AM PT"
+      location="Online"
+    />,
+    { width: 1200, height: 630 }
+  );
+}
+```
+
+## API Reference
+
+### Event
+
+| Prop       | Type     | Default                       |
+| ---------- | -------- | ----------------------------- |
+| `label`    | `string` | `"Live Event"`                |
+| `brand`    | `string` | `"ogcn"`                      |
+| `title`    | `string` | An example event title.       |
+| `date`     | `string` | `"Jun 5, 2026 · 10:00 AM PT"` |
+| `location` | `string` | `"Online"`                    |
+| `accent`   | `string` | `"#f59e0b"`                   |

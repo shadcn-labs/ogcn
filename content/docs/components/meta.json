@@ -8,6 +8,14 @@
     "blog",
     "changelog",
     "quote",
-    "photo"
+    "photo",
+    "product",
+    "profile",
+    "event",
+    "stat",
+    "logo",
+    "terminal",
+    "editorial",
+    "showcase"
   ]
 }

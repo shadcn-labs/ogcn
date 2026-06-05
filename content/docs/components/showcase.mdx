@@ -1,0 +1,72 @@
+---
+title: Showcase
+description: A product-showcase Open Graph image with a centered headline above a faux browser window and a minimal dashboard UI.
+---
+
+import { Showcase } from "@/registry/ogcn/showcase";
+
+<ComponentPreview hideCode>
+  <Showcase />
+</ComponentPreview>
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Command</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://ogcn.vercel.app/r/showcase.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="showcase" title="components/og/showcase.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { ImageResponse } from "next/og";
+
+import { Showcase } from "@/components/og/showcase";
+
+export function GET() {
+  return new ImageResponse(
+    <Showcase
+      title="Run your business smarter"
+      subtitle="Every metric in one calm view."
+      url="app.acme.com"
+    />,
+    { width: 1200, height: 630 }
+  );
+}
+```
+
+## API Reference
+
+### Showcase
+
+| Prop       | Type     | Default                       |
+| ---------- | -------- | ----------------------------- |
+| `title`    | `string` | `"Run your business smarter"` |
+| `subtitle` | `string` | A short supporting line.      |
+| `url`      | `string` | `"app.ogcn.dev"`              |
+| `accent`   | `string` | `"#6366f1"`                   |

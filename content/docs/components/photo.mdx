@@ -5,7 +5,7 @@ description: A full-bleed photo Open Graph image with a dark gradient scrim and 
 
 import { Photo } from "@/registry/ogcn/photo";
 
-<ComponentPreview endpoint="/og/component/photo" hideCode>
+<ComponentPreview hideCode>
   <Photo />
 </ComponentPreview>
 
@@ -59,10 +59,6 @@ export function GET() {
   );
 }
 ```
-
-The `image` URL must be absolute and publicly reachable when rendered on the
-server. When omitted, a rich gradient is used as a fallback so the component
-always renders.
 
 ## API Reference
 

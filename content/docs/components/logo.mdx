@@ -1,0 +1,69 @@
+---
+title: Logo
+description: A centered brand Open Graph image with a logo tile, a large wordmark, and an optional tagline on a soft gradient field.
+---
+
+import { Logo } from "@/registry/ogcn/logo";
+
+<ComponentPreview hideCode>
+  <Logo />
+</ComponentPreview>
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Command</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://ogcn.vercel.app/r/logo.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="logo" title="components/og/logo.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { ImageResponse } from "next/og";
+
+import { Logo } from "@/components/og/logo";
+
+export function GET() {
+  return new ImageResponse(
+    <Logo brand="acme" tagline="The all-in-one platform" accent="#6366f1" />,
+    { width: 1200, height: 630 }
+  );
+}
+```
+
+## API Reference
+
+### Logo
+
+| Prop         | Type     | Default                                 |
+| ------------ | -------- | --------------------------------------- |
+| `brand`      | `string` | `"ogcn"`                                |
+| `tagline`    | `string` | A short supporting line.                |
+| `monogram`   | `string` | First letter of `brand`                 |
+| `accent`     | `string` | `"#7c3aed"`                             |
+| `background` | `string` | `"#09090b"` (hex color or CSS gradient) |

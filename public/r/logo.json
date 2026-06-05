@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "logo",
+  "title": "Logo",
+  "description": "A centered brand Open Graph image with a logo tile, a large wordmark, and an optional tagline on a soft gradient field.",
+  "files": [
+    {
+      "path": "registry/ogcn/logo.tsx",
+      "content": "/**\n * logo\n *\n * A centered brand / wordmark Open Graph image — a logo tile, a large\n * wordmark, and an optional tagline on a soft gradient field. Modeled on the\n * common \"just the brand\" social cards (OpenAI, area, TWYG).\n *\n * Built for Satori / `next/og` — inline styles only.\n */\n\nexport interface LogoProps {\n  /** The wordmark text. */\n  brand?: string;\n  /** Optional tagline shown under the wordmark. */\n  tagline?: string;\n  /** Monogram shown in the logo tile. Defaults to the brand's first letter. */\n  monogram?: string;\n  accent?: string;\n  /** Background CSS color or gradient. */\n  background?: string;\n}\n\nexport const Logo = ({\n  brand = \"ogcn\",\n  tagline = \"Open Graph images, built on Satori\",\n  monogram,\n  accent = \"#7c3aed\",\n  background = \"#09090b\",\n}: LogoProps) => {\n  const isColor = background.startsWith(\"#\");\n\n  return (\n    <div\n      style={{\n        alignItems: \"center\",\n        backgroundColor: isColor ? background : \"#09090b\",\n        backgroundImage: isColor\n          ? `radial-gradient(circle at 50% 50%, ${accent}33, transparent 60%)`\n          : background,\n        color: \"#fafafa\",\n        display: \"flex\",\n        flexDirection: \"column\",\n        height: \"100%\",\n        justifyContent: \"center\",\n        width: \"100%\",\n      }}\n    >\n      <div\n        style={{\n          alignItems: \"center\",\n          backgroundColor: accent,\n          borderRadius: \"28px\",\n          boxShadow: `0 24px 80px ${accent}55`,\n          color: \"#ffffff\",\n          display: \"flex\",\n          fontSize: \"72px\",\n          fontWeight: 800,\n          height: \"140px\",\n          justifyContent: \"center\",\n          width: \"140px\",\n        }}\n      >\n        {monogram ?? brand.charAt(0).toUpperCase()}\n      </div>\n\n      <div\n        style={{\n          display: \"flex\",\n          fontSize: \"96px\",\n          fontWeight: 800,\n          letterSpacing: \"-0.04em\",\n          marginTop: \"44px\",\n        }}\n      >\n        {brand}\n      </div>\n\n      {tagline ? (\n        <div\n          style={{\n            color: \"#a1a1aa\",\n            display: \"flex\",\n            fontSize: \"32px\",\n            marginTop: \"16px\",\n          }}\n        >\n          {tagline}\n        </div>\n      ) : null}\n    </div>\n  );\n};\n",
+      "type": "registry:component",
+      "target": "components/og/logo.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

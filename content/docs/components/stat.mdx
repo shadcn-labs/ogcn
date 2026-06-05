@@ -1,0 +1,75 @@
+---
+title: Stat
+description: A metric / dashboard Open Graph image with an eyebrow label, an oversized number, a trend pill, and a caption.
+---
+
+import { Stat } from "@/registry/ogcn/stat";
+
+<ComponentPreview hideCode>
+  <Stat />
+</ComponentPreview>
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Command</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://ogcn.vercel.app/r/stat.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="stat" title="components/og/stat.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { ImageResponse } from "next/og";
+
+import { Stat } from "@/components/og/stat";
+
+export function GET() {
+  return new ImageResponse(
+    <Stat
+      label="Images rendered"
+      value="10M+"
+      trend="+24%"
+      caption="Open Graph images generated with next/og this year."
+    />,
+    { width: 1200, height: 630 }
+  );
+}
+```
+
+## API Reference
+
+### Stat
+
+| Prop      | Type     | Default                  |
+| --------- | -------- | ------------------------ |
+| `label`   | `string` | `"Images rendered"`      |
+| `value`   | `string` | `"10M+"`                 |
+| `caption` | `string` | A short supporting line. |
+| `trend`   | `string` | `"+24%"`                 |
+| `brand`   | `string` | `"ogcn"`                 |
+| `accent`  | `string` | `"#22c55e"`              |

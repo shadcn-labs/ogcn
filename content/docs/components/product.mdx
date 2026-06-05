@@ -1,0 +1,75 @@
+---
+title: Product
+description: A two-column product Open Graph image with brand and copy on the left, a product shot on the right, and a price pill.
+---
+
+import { Product } from "@/registry/ogcn/product";
+
+<ComponentPreview hideCode>
+  <Product />
+</ComponentPreview>
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Command</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://ogcn.vercel.app/r/product.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="product" title="components/og/product.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { ImageResponse } from "next/og";
+
+import { Product } from "@/components/og/product";
+
+export function GET() {
+  return new ImageResponse(
+    <Product
+      title="Acme Pro"
+      description="Everything you need to ship faster."
+      price="$49"
+      image="https://example.com/product.png"
+    />,
+    { width: 1200, height: 630 }
+  );
+}
+```
+
+## API Reference
+
+### Product
+
+| Prop          | Type     | Default                         |
+| ------------- | -------- | ------------------------------- |
+| `brand`       | `string` | `"ogcn"`                        |
+| `title`       | `string` | `"The OG image toolkit"`        |
+| `description` | `string` | A short supporting line.        |
+| `price`       | `string` | `"$49"`                         |
+| `image`       | `string` | `undefined` (gradient fallback) |
+| `accent`      | `string` | `"#6366f1"`                     |

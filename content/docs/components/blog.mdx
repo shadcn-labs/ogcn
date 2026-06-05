@@ -5,7 +5,7 @@ description: An article Open Graph image with a category badge, headline, excerp
 
 import { Blog } from "@/registry/ogcn/blog";
 
-<ComponentPreview endpoint="/og/component/blog" hideCode>
+<ComponentPreview hideCode>
   <Blog />
 </ComponentPreview>
 
@@ -60,9 +60,6 @@ export function GET() {
   );
 }
 ```
-
-Pass an `avatar` URL to render a real profile image; when omitted, the author's
-initials are shown in a colored circle. On the server the URL must be absolute.
 
 ## API Reference
 

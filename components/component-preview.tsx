@@ -2,7 +2,6 @@ import type { ReactNode } from "react";
 
 import { ComponentPreviewClient } from "@/components/component-preview-client";
 import { ComponentSource } from "@/components/component-source";
-import { CopyButton } from "@/components/copy-button";
 import { cn } from "@/lib/utils";
 
 /**
@@ -17,7 +16,6 @@ export const ComponentPreview = ({
   name,
   src,
   title,
-  endpoint,
   hideCode = false,
   children,
   className,
@@ -40,14 +38,6 @@ export const ComponentPreview = ({
 }) => (
   <div className={cn("flex flex-col gap-4", className)}>
     <ComponentPreviewClient>{children}</ComponentPreviewClient>
-    {endpoint ? (
-      <div className="flex items-center justify-between rounded-lg border bg-muted/30 px-3 py-2">
-        <code className="truncate font-mono text-xs text-muted-foreground">
-          {endpoint}
-        </code>
-        <CopyButton event="copy_npm_command" value={endpoint} />
-      </div>
-    ) : null}
     {!hideCode && (name || src) ? (
       <ComponentSource name={name} src={src} title={title} />
     ) : null}

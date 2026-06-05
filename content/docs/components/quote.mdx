@@ -5,7 +5,7 @@ description: A testimonial / tweet-style Open Graph image with a large quote and
 
 import { Quote } from "@/registry/ogcn/quote";
 
-<ComponentPreview endpoint="/og/component/quote" hideCode>
+<ComponentPreview hideCode>
   <Quote />
 </ComponentPreview>
 
@@ -59,9 +59,6 @@ export function GET() {
   );
 }
 ```
-
-Pass an `avatar` URL to render a real profile image; when omitted, the author's
-initials are shown in a colored circle.
 
 ## API Reference
 
