@@ -6,7 +6,7 @@ description: A personal / portfolio Open Graph image with a circular avatar besi
 import { Profile } from "@/registry/ogcn/profile";
 
 <ComponentPreview hideCode>
-  <Profile />
+  <Profile {...Profile.previewProps} />
 </ComponentPreview>
 
 ## Installation
@@ -65,11 +65,11 @@ export function GET() {
 
 ### Profile
 
-| Prop      | Type     | Default                              |
-| --------- | -------- | ------------------------------------ |
-| `name`    | `string` | `"Ada Lovelace"`                     |
-| `role`    | `string` | `"Founder & Engineer"`               |
-| `bio`     | `string` | A short supporting bio.              |
-| `avatar`  | `string` | `undefined` (falls back to initials) |
-| `website` | `string` | `"ada.dev"`                          |
-| `accent`  | `string` | `"#f43f5e"`                          |
+| Prop      | Type     | Default |
+| --------- | -------- | ------- |
+| `name`    | `string` | `-`     |
+| `role`    | `string` | `-`     |
+| `bio`     | `string` | `-`     |
+| `avatar`  | `string` | `-`     |
+| `website` | `string` | `-`     |
+| `accent`  | `string` | `-`     |

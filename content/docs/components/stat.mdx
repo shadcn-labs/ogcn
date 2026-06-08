@@ -6,7 +6,7 @@ description: A metric / dashboard Open Graph image with an eyebrow label, an ove
 import { Stat } from "@/registry/ogcn/stat";
 
 <ComponentPreview hideCode>
-  <Stat />
+  <Stat {...Stat.previewProps} />
 </ComponentPreview>
 
 ## Installation
@@ -65,11 +65,11 @@ export function GET() {
 
 ### Stat
 
-| Prop      | Type     | Default                  |
-| --------- | -------- | ------------------------ |
-| `label`   | `string` | `"Images rendered"`      |
-| `value`   | `string` | `"10M+"`                 |
-| `caption` | `string` | A short supporting line. |
-| `trend`   | `string` | `"+24%"`                 |
-| `brand`   | `string` | `"ogcn"`                 |
-| `accent`  | `string` | `"#22c55e"`              |
+| Prop      | Type     | Default |
+| --------- | -------- | ------- |
+| `label`   | `string` | `-`     |
+| `value`   | `string` | `-`     |
+| `caption` | `string` | `-`     |
+| `trend`   | `string` | `-`     |
+| `brand`   | `string` | `-`     |
+| `accent`  | `string` | `-`     |

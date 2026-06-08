@@ -9,19 +9,14 @@
  */
 
 export interface TerminalProps {
-  brand?: string;
-  title?: string;
+  brand: string;
+  title: string;
   /** Optional kicker shown under the title. */
   caption?: string;
   accent?: string;
 }
 
-export const Terminal = ({
-  brand = "ogcn",
-  title = "Ship beautiful OG images",
-  caption = "npx shadcn@latest add ogcn",
-  accent = "#22c55e",
-}: TerminalProps) => (
+export const Terminal = ({ brand, title, caption, accent }: TerminalProps) => (
   <div
     style={{
       backgroundColor: "#0a0a0a",
@@ -82,3 +77,10 @@ export const Terminal = ({
     </div>
   </div>
 );
+
+Terminal.previewProps = {
+  accent: "#22c55e",
+  brand: "ogcn",
+  caption: "npx shadcn@latest add ogcn",
+  title: "Ship beautiful OG images",
+} satisfies TerminalProps;

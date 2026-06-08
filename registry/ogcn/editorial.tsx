@@ -10,24 +10,24 @@
 
 export interface EditorialProps {
   /** Small kicker / section label. */
-  kicker?: string;
-  title?: string;
+  kicker: string;
+  title: string;
   /** Author or brand shown in the footer. */
-  author?: string;
+  author: string;
   /** Meta line shown next to the author (e.g. an issue or date). */
-  meta?: string;
+  meta: string;
   /** Large faint word set behind the title. Defaults to the first word. */
   ghost?: string;
   accent?: string;
 }
 
 export const Editorial = ({
-  kicker = "Essay",
-  title = "Designing at the edge of the canvas",
-  author = "ogcn",
-  meta = "Issue 04",
+  kicker,
+  title,
+  author,
+  meta,
   ghost,
-  accent = "#e11d48",
+  accent,
 }: EditorialProps) => (
   <div
     style={{
@@ -109,3 +109,12 @@ export const Editorial = ({
     </div>
   </div>
 );
+
+Editorial.previewProps = {
+  accent: "#e11d48",
+  author: "ogcn",
+  ghost: "",
+  kicker: "Essay",
+  meta: "Issue 04",
+  title: "Designing at the edge of the canvas",
+} satisfies EditorialProps;

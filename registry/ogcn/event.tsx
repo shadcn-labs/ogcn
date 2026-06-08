@@ -9,21 +9,21 @@
 
 export interface EventProps {
   /** Small eyebrow / kind label (e.g. "Live Event"). */
-  label?: string;
-  brand?: string;
-  title?: string;
-  date?: string;
-  location?: string;
+  label: string;
+  brand: string;
+  title: string;
+  date: string;
+  location: string;
   accent?: string;
 }
 
 export const Event = ({
-  label = "Live Event",
-  brand = "ogcn",
-  title = "Shipping beautiful OG images at scale",
-  date = "Jun 5, 2026 · 10:00 AM PT",
-  location = "Online",
-  accent = "#f59e0b",
+  label,
+  brand,
+  title,
+  date,
+  location,
+  accent,
 }: EventProps) => (
   <div
     style={{
@@ -132,3 +132,12 @@ export const Event = ({
     </div>
   </div>
 );
+
+Event.previewProps = {
+  accent: "#f59e0b",
+  brand: "ogcn",
+  date: "Jun 5, 2026 · 10:00 AM PT",
+  label: "Live Event",
+  location: "Online",
+  title: "Shipping beautiful OG images at scale",
+} satisfies EventProps;

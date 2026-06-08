@@ -6,7 +6,7 @@ description: A full-bleed photo Open Graph image with a dark gradient scrim and 
 import { Photo } from "@/registry/ogcn/photo";
 
 <ComponentPreview hideCode>
-  <Photo />
+  <Photo {...Photo.previewProps} />
 </ComponentPreview>
 
 ## Installation
@@ -64,9 +64,9 @@ export function GET() {
 
 ### Photo
 
-| Prop    | Type     | Default                                     |
-| ------- | -------- | ------------------------------------------- |
-| `image` | `string` | `undefined` (gradient fallback)             |
-| `label` | `string` | `"Travel"`                                  |
-| `title` | `string` | `"Chasing light across the northern coast"` |
-| `brand` | `string` | `"ogcn"`                                    |
+| Prop    | Type     | Default |
+| ------- | -------- | ------- |
+| `image` | `string` | `-`     |
+| `label` | `string` | `-`     |
+| `title` | `string` | `-`     |
+| `brand` | `string` | `-`     |

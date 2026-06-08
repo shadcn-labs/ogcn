@@ -6,7 +6,7 @@ description: A poster-style Open Graph image with oversized display type and a l
 import { Editorial } from "@/registry/ogcn/editorial";
 
 <ComponentPreview hideCode>
-  <Editorial />
+  <Editorial {...Editorial.previewProps} />
 </ComponentPreview>
 
 ## Installation
@@ -65,11 +65,11 @@ export function GET() {
 
 ### Editorial
 
-| Prop     | Type     | Default               |
-| -------- | -------- | --------------------- |
-| `kicker` | `string` | `"Essay"`             |
-| `title`  | `string` | An example headline.  |
-| `author` | `string` | `"ogcn"`              |
-| `meta`   | `string` | `"Issue 04"`          |
-| `ghost`  | `string` | First word of `title` |
-| `accent` | `string` | `"#e11d48"`           |
+| Prop     | Type     | Default |
+| -------- | -------- | ------- |
+| `kicker` | `string` | `-`     |
+| `title`  | `string` | `-`     |
+| `author` | `string` | `-`     |
+| `meta`   | `string` | `-`     |
+| `ghost`  | `string` | `-`     |
+| `accent` | `string` | `-`     |

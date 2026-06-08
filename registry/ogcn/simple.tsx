@@ -22,23 +22,23 @@
 
 export interface SimpleProps {
   /** Small eyebrow / category label shown above the title. */
-  label?: string;
+  label: string;
   /** The headline. */
-  title?: string;
+  title: string;
   /** Supporting copy shown below the title. */
-  description?: string;
+  description: string;
   /** Brand name shown in the footer. */
-  brand?: string;
+  brand: string;
   /** Accent color used for the label and brand dot. */
   accent?: string;
 }
 
 export const Simple = ({
-  label = "Open Graph",
-  title = "Beautiful OG images, built on Satori",
-  description = "A shadcn registry of social card components you can copy, paste, and ship.",
-  brand = "ogcn",
-  accent = "#7c3aed",
+  label,
+  title,
+  description,
+  brand,
+  accent,
 }: SimpleProps) => (
   <div
     style={{
@@ -135,3 +135,12 @@ export const Simple = ({
     </div>
   </div>
 );
+
+Simple.previewProps = {
+  accent: "#7c3aed",
+  brand: "ogcn",
+  description:
+    "A shadcn registry of social card components you can copy, paste, and ship.",
+  label: "Open Graph",
+  title: "Beautiful OG images, built on Satori",
+} satisfies SimpleProps;

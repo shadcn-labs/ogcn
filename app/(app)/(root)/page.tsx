@@ -37,16 +37,16 @@ export default function IndexPage() {
         <section className="container-wrapper pb-12 lg:pb-20">
           <div className="container grid gap-6 sm:grid-cols-2">
             <ComponentPreview>
-              <Gradient />
+              <Gradient {...Gradient.previewProps} />
             </ComponentPreview>
             <ComponentPreview>
-              <Simple />
+              <Simple {...Simple.previewProps} />
             </ComponentPreview>
             <ComponentPreview>
-              <Blog />
+              <Blog {...Blog.previewProps} />
             </ComponentPreview>
             <ComponentPreview>
-              <Grid />
+              <Grid {...Grid.previewProps} />
             </ComponentPreview>
           </div>
         </section>

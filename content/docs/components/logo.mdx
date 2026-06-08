@@ -6,7 +6,7 @@ description: A centered brand Open Graph image with a logo tile, a large wordmar
 import { Logo } from "@/registry/ogcn/logo";
 
 <ComponentPreview hideCode>
-  <Logo />
+  <Logo {...Logo.previewProps} />
 </ComponentPreview>
 
 ## Installation
@@ -60,10 +60,10 @@ export function GET() {
 
 ### Logo
 
-| Prop         | Type     | Default                                 |
-| ------------ | -------- | --------------------------------------- |
-| `brand`      | `string` | `"ogcn"`                                |
-| `tagline`    | `string` | A short supporting line.                |
-| `monogram`   | `string` | First letter of `brand`                 |
-| `accent`     | `string` | `"#7c3aed"`                             |
-| `background` | `string` | `"#09090b"` (hex color or CSS gradient) |
+| Prop         | Type     | Default |
+| ------------ | -------- | ------- |
+| `brand`      | `string` | `-`     |
+| `tagline`    | `string` | `-`     |
+| `monogram`   | `string` | `-`     |
+| `accent`     | `string` | `-`     |
+| `background` | `string` | `-`     |

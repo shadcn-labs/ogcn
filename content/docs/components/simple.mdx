@@ -6,7 +6,7 @@ description: A minimal, centered Open Graph image with an eyebrow label, title, 
 import { Simple } from "@/registry/ogcn/simple";
 
 <ComponentPreview hideCode>
-  <Simple />
+  <Simple {...Simple.previewProps} />
 </ComponentPreview>
 
 ## Installation
@@ -60,10 +60,10 @@ export function GET() {
 
 ### Simple
 
-| Prop          | Type     | Default                                  |
-| ------------- | -------- | ---------------------------------------- |
-| `label`       | `string` | `"Open Graph"`                           |
-| `title`       | `string` | `"Beautiful OG images, built on Satori"` |
-| `description` | `string` | A short supporting line.                 |
-| `brand`       | `string` | `"ogcn"`                                 |
-| `accent`      | `string` | `"#7c3aed"`                              |
+| Prop          | Type     | Default |
+| ------------- | -------- | ------- |
+| `label`       | `string` | `-`     |
+| `title`       | `string` | `-`     |
+| `description` | `string` | `-`     |
+| `brand`       | `string` | `-`     |
+| `accent`      | `string` | `-`     |

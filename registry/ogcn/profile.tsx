@@ -9,15 +9,15 @@
  */
 
 export interface ProfileProps {
-  name?: string;
+  name: string;
   /** Role / title shown under the name. */
-  role?: string;
+  role: string;
   /** Short supporting bio. */
-  bio?: string;
+  bio: string;
   /** Optional avatar image URL. Falls back to initials. */
   avatar?: string;
   /** Website shown in the pill (e.g. "aniketpawar.com"). */
-  website?: string;
+  website: string;
   accent?: string;
 }
 
@@ -30,12 +30,12 @@ const initials = (name: string) =>
     .toUpperCase();
 
 export const Profile = ({
-  name = "Ada Lovelace",
-  role = "Founder & Engineer",
-  bio = "Building tools for the open web. Writing about design systems, performance, and shipping fast.",
+  name,
+  role,
+  bio,
   avatar,
-  website = "ada.dev",
-  accent = "#f43f5e",
+  website,
+  accent,
 }: ProfileProps) => (
   <div
     style={{
@@ -138,3 +138,12 @@ export const Profile = ({
     </div>
   </div>
 );
+
+Profile.previewProps = {
+  accent: "#f43f5e",
+  avatar: "",
+  bio: "Building tools for the open web. Writing about design systems, performance, and shipping fast.",
+  name: "Ada Lovelace",
+  role: "Founder & Engineer",
+  website: "ada.dev",
+} satisfies ProfileProps;

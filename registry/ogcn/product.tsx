@@ -10,23 +10,23 @@
 
 export interface ProductProps {
   /** Brand name shown in the top-left. */
-  brand?: string;
-  title?: string;
-  description?: string;
+  brand: string;
+  title: string;
+  description: string;
   /** Price string shown in the pill (e.g. "$49" or "Free"). */
-  price?: string;
+  price: string;
   /** Product image URL. Must be absolute when rendered on the server. */
   image?: string;
   accent?: string;
 }
 
 export const Product = ({
-  brand = "ogcn",
-  title = "The OG image toolkit",
-  description = "Copy-paste social cards rendered with next/og.",
-  price = "$49",
+  brand,
+  title,
+  description,
+  price,
   image,
-  accent = "#6366f1",
+  accent,
 }: ProductProps) => (
   <div
     style={{
@@ -124,3 +124,12 @@ export const Product = ({
     />
   </div>
 );
+
+Product.previewProps = {
+  accent: "#6366f1",
+  brand: "ogcn",
+  description: "Copy-paste social cards rendered with next/og.",
+  image: "",
+  price: "$49",
+  title: "The OG image toolkit",
+} satisfies ProductProps;

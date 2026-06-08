@@ -8,18 +8,18 @@
  */
 
 export interface GradientProps {
-  label?: string;
-  title?: string;
-  description?: string;
+  label: string;
+  title: string;
+  description: string;
   /** CSS gradient applied to the background. */
   gradient?: string;
 }
 
 export const Gradient = ({
-  label = "Announcing",
-  title = "Ship a stunning social card",
-  description = "Drop-in OG image components with a single component import.",
-  gradient = "linear-gradient(135deg, #6d28d9 0%, #db2777 50%, #f59e0b 100%)",
+  label,
+  title,
+  description,
+  gradient,
 }: GradientProps) => (
   <div
     style={{
@@ -87,3 +87,10 @@ export const Gradient = ({
     </div>
   </div>
 );
+
+Gradient.previewProps = {
+  description: "Drop-in OG image components with a single component import.",
+  gradient: "linear-gradient(135deg, #6d28d9 0%, #db2777 50%, #f59e0b 100%)",
+  label: "Announcing",
+  title: "Ship a stunning social card",
+} satisfies GradientProps;

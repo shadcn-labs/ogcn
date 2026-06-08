@@ -20,8 +20,8 @@ const SIZE = { height: 630, width: 1200 };
 
 const renderComponent = (
   name: string,
-  get: (key: string) => string | undefined,
-  list: (key: string) => string[] | undefined
+  get: (key: string) => string,
+  list: (key: string) => string[]
 ) => {
   switch (name) {
     case "simple": {
@@ -212,9 +212,8 @@ export const GET = async (
 ) => {
   const { name } = await params;
   const sp = new URL(request.url).searchParams;
-  const get = (key: string) => sp.get(key) ?? undefined;
-  const list = (key: string) =>
-    sp.get(key)?.split("|").filter(Boolean) ?? undefined;
+  const get = (key: string) => sp.get(key) ?? "";
+  const list = (key: string) => sp.get(key)?.split("|").filter(Boolean) ?? [];
 
   const element = renderComponent(name, get, list);
 

@@ -10,22 +10,22 @@
 
 export interface LogoProps {
   /** The wordmark text. */
-  brand?: string;
+  brand: string;
   /** Optional tagline shown under the wordmark. */
   tagline?: string;
   /** Monogram shown in the logo tile. Defaults to the brand's first letter. */
   monogram?: string;
   accent?: string;
   /** Background CSS color or gradient. */
-  background?: string;
+  background: string;
 }
 
 export const Logo = ({
-  brand = "ogcn",
-  tagline = "Open Graph images, built on Satori",
+  brand,
+  tagline,
   monogram,
-  accent = "#7c3aed",
-  background = "#09090b",
+  accent,
+  background,
 }: LogoProps) => {
   const isColor = background.startsWith("#");
 
@@ -90,3 +90,11 @@ export const Logo = ({
     </div>
   );
 };
+
+Logo.previewProps = {
+  accent: "#7c3aed",
+  background: "#09090b",
+  brand: "ogcn",
+  monogram: "",
+  tagline: "Open Graph images, built on Satori",
+} satisfies LogoProps;

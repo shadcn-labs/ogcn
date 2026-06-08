@@ -6,7 +6,7 @@ description: A testimonial / tweet-style Open Graph image with a large quote and
 import { Quote } from "@/registry/ogcn/quote";
 
 <ComponentPreview hideCode>
-  <Quote />
+  <Quote {...Quote.previewProps} />
 </ComponentPreview>
 
 ## Installation
@@ -64,10 +64,10 @@ export function GET() {
 
 ### Quote
 
-| Prop     | Type     | Default                              |
-| -------- | -------- | ------------------------------------ |
-| `quote`  | `string` | An example testimonial.              |
-| `author` | `string` | `"Grace Hopper"`                     |
-| `handle` | `string` | `"@gracehopper"`                     |
-| `avatar` | `string` | `undefined` (falls back to initials) |
-| `accent` | `string` | `"#f472b6"`                          |
+| Prop     | Type     | Default |
+| -------- | -------- | ------- |
+| `quote`  | `string` | `-`     |
+| `author` | `string` | `-`     |
+| `handle` | `string` | `-`     |
+| `avatar` | `string` | `-`     |
+| `accent` | `string` | `-`     |

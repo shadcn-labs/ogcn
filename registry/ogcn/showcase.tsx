@@ -10,19 +10,14 @@
  */
 
 export interface ShowcaseProps {
-  title?: string;
-  subtitle?: string;
+  title: string;
+  subtitle: string;
   /** URL shown in the faux browser address bar. */
-  url?: string;
+  url: string;
   accent?: string;
 }
 
-export const Showcase = ({
-  title = "Run your business smarter",
-  subtitle = "The dashboard that brings every metric into one calm view.",
-  url = "app.ogcn.dev",
-  accent = "#6366f1",
-}: ShowcaseProps) => (
+export const Showcase = ({ title, subtitle, url, accent }: ShowcaseProps) => (
   <div
     style={{
       alignItems: "center",
@@ -206,3 +201,10 @@ export const Showcase = ({
     </div>
   </div>
 );
+
+Showcase.previewProps = {
+  accent: "#6366f1",
+  subtitle: "The dashboard that brings every metric into one calm view.",
+  title: "Run your business smarter",
+  url: "app.ogcn.dev",
+} satisfies ShowcaseProps;

@@ -6,7 +6,7 @@ description: A framed, technical Open Graph image with a dashed border grid and 
 import { Grid } from "@/registry/ogcn/grid";
 
 <ComponentPreview hideCode>
-  <Grid />
+  <Grid {...Grid.previewProps} />
 </ComponentPreview>
 
 ## Installation
@@ -60,9 +60,9 @@ export function GET() {
 
 ### Grid
 
-| Prop          | Type     | Default                      |
-| ------------- | -------- | ---------------------------- |
-| `title`       | `string` | `"Build your own OG images"` |
-| `description` | `string` | A short supporting line.     |
-| `brand`       | `string` | `"ogcn"`                     |
-| `accent`      | `string` | `"#22d3ee"`                  |
+| Prop          | Type     | Default |
+| ------------- | -------- | ------- |
+| `title`       | `string` | `-`     |
+| `description` | `string` | `-`     |
+| `brand`       | `string` | `-`     |
+| `accent`      | `string` | `-`     |

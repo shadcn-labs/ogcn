@@ -6,7 +6,7 @@ description: An article Open Graph image with a category badge, headline, excerp
 import { Blog } from "@/registry/ogcn/blog";
 
 <ComponentPreview hideCode>
-  <Blog />
+  <Blog {...Blog.previewProps} />
 </ComponentPreview>
 
 ## Installation
@@ -65,12 +65,12 @@ export function GET() {
 
 ### Blog
 
-| Prop       | Type     | Default                                       |
-| ---------- | -------- | --------------------------------------------- |
-| `category` | `string` | `"Engineering"`                               |
-| `title`    | `string` | `"How we generate social images at the edge"` |
-| `excerpt`  | `string` | A short supporting line.                      |
-| `author`   | `string` | `"Ada Lovelace"`                              |
-| `meta`     | `string` | `"Jun 5, 2026 · 6 min read"`                  |
-| `avatar`   | `string` | `undefined` (falls back to initials)          |
-| `accent`   | `string` | `"#7c3aed"`                                   |
+| Prop       | Type     | Default |
+| ---------- | -------- | ------- |
+| `category` | `string` | `-`     |
+| `title`    | `string` | `-`     |
+| `excerpt`  | `string` | `-`     |
+| `author`   | `string` | `-`     |
+| `meta`     | `string` | `-`     |
+| `avatar`   | `string` | `-`     |
+| `accent`   | `string` | `-`     |

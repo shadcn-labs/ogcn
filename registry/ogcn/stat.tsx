@@ -9,24 +9,24 @@
 
 export interface StatProps {
   /** Small eyebrow label shown above the value. */
-  label?: string;
+  label: string;
   /** The headline metric (e.g. "10M+"). */
-  value?: string;
+  value: string;
   /** Caption shown under the value. */
-  caption?: string;
+  caption: string;
   /** Optional trend string shown in a pill (e.g. "+24%"). */
   trend?: string;
-  brand?: string;
+  brand: string;
   accent?: string;
 }
 
 export const Stat = ({
-  label = "Images rendered",
-  value = "10M+",
-  caption = "Open Graph images generated with next/og this year.",
-  trend = "+24%",
-  brand = "ogcn",
-  accent = "#22c55e",
+  label,
+  value,
+  caption,
+  trend,
+  brand,
+  accent,
 }: StatProps) => (
   <div
     style={{
@@ -144,3 +144,12 @@ export const Stat = ({
     </div>
   </div>
 );
+
+Stat.previewProps = {
+  accent: "#22c55e",
+  brand: "ogcn",
+  caption: "Open Graph images generated with next/og this year.",
+  label: "Images rendered",
+  trend: "+24%",
+  value: "10M+",
+} satisfies StatProps;

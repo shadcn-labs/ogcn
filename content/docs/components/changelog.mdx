@@ -6,7 +6,7 @@ description: A release Open Graph image with a version pill, date, title, and a 
 import { Changelog } from "@/registry/ogcn/changelog";
 
 <ComponentPreview hideCode>
-  <Changelog />
+  <Changelog {...Changelog.previewProps} />
 </ComponentPreview>
 
 ## Installation
@@ -65,11 +65,11 @@ export function GET() {
 
 ### Changelog
 
-| Prop      | Type       | Default                                 |
-| --------- | ---------- | --------------------------------------- |
-| `version` | `string`   | `"v2.0"`                                |
-| `date`    | `string`   | `"June 2026"`                           |
-| `title`   | `string`   | `"What's new"`                          |
-| `items`   | `string[]` | Three example highlights (max 4 shown). |
-| `brand`   | `string`   | `"ogcn"`                                |
-| `accent`  | `string`   | `"#34d399"`                             |
+| Prop      | Type       | Default |
+| --------- | ---------- | ------- |
+| `version` | `string`   | `-`     |
+| `date`    | `string`   | `-`     |
+| `title`   | `string`   | `-`     |
+| `items`   | `string[]` | `-`     |
+| `brand`   | `string`   | `-`     |
+| `accent`  | `string`   | `-`     |

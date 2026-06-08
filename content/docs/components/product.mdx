@@ -6,7 +6,7 @@ description: A two-column product Open Graph image with brand and copy on the le
 import { Product } from "@/registry/ogcn/product";
 
 <ComponentPreview hideCode>
-  <Product />
+  <Product {...Product.previewProps} />
 </ComponentPreview>
 
 ## Installation
@@ -65,11 +65,11 @@ export function GET() {
 
 ### Product
 
-| Prop          | Type     | Default                         |
-| ------------- | -------- | ------------------------------- |
-| `brand`       | `string` | `"ogcn"`                        |
-| `title`       | `string` | `"The OG image toolkit"`        |
-| `description` | `string` | A short supporting line.        |
-| `price`       | `string` | `"$49"`                         |
-| `image`       | `string` | `undefined` (gradient fallback) |
-| `accent`      | `string` | `"#6366f1"`                     |
+| Prop          | Type     | Default |
+| ------------- | -------- | ------- |
+| `brand`       | `string` | `-`     |
+| `title`       | `string` | `-`     |
+| `description` | `string` | `-`     |
+| `price`       | `string` | `-`     |
+| `image`       | `string` | `-`     |
+| `accent`      | `string` | `-`     |

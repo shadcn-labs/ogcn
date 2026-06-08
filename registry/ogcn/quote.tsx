@@ -9,9 +9,9 @@
  */
 
 export interface QuoteProps {
-  quote?: string;
-  author?: string;
-  handle?: string;
+  quote: string;
+  author: string;
+  handle: string;
   avatar?: string;
   accent?: string;
 }
@@ -25,11 +25,11 @@ const initials = (name: string) =>
     .toUpperCase();
 
 export const Quote = ({
-  quote = "This is hands down the fastest way to ship beautiful OG images.",
-  author = "Grace Hopper",
-  handle = "@gracehopper",
+  quote,
+  author,
+  handle,
   avatar,
-  accent = "#f472b6",
+  accent,
 }: QuoteProps) => (
   <div
     style={{
@@ -114,3 +114,11 @@ export const Quote = ({
     </div>
   </div>
 );
+
+Quote.previewProps = {
+  accent: "#f472b6",
+  author: "Grace Hopper",
+  avatar: "",
+  handle: "@gracehopper",
+  quote: "This is hands down the fastest way to ship beautiful OG images.",
+} satisfies QuoteProps;

@@ -9,18 +9,13 @@
  */
 
 export interface GridProps {
-  title?: string;
-  description?: string;
-  brand?: string;
+  title: string;
+  description: string;
+  brand: string;
   accent?: string;
 }
 
-export const Grid = ({
-  title = "Build your own OG images",
-  description = "Composable components powered by Satori and the next/og runtime.",
-  brand = "ogcn",
-  accent = "#22d3ee",
-}: GridProps) => (
+export const Grid = ({ title, description, brand, accent }: GridProps) => (
   <div
     style={{
       backgroundColor: "#0a0a0a",
@@ -144,3 +139,11 @@ export const Grid = ({
     </div>
   </div>
 );
+
+Grid.previewProps = {
+  accent: "#22d3ee",
+  brand: "ogcn",
+  description:
+    "Composable components powered by Satori and the next/og runtime.",
+  title: "Build your own OG images",
+} satisfies GridProps;

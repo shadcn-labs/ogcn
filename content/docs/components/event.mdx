@@ -6,7 +6,7 @@ description: An event / launch Open Graph image with an eyebrow label, large tit
 import { Event } from "@/registry/ogcn/event";
 
 <ComponentPreview hideCode>
-  <Event />
+  <Event {...Event.previewProps} />
 </ComponentPreview>
 
 ## Installation
@@ -65,11 +65,11 @@ export function GET() {
 
 ### Event
 
-| Prop       | Type     | Default                       |
-| ---------- | -------- | ----------------------------- |
-| `label`    | `string` | `"Live Event"`                |
-| `brand`    | `string` | `"ogcn"`                      |
-| `title`    | `string` | An example event title.       |
-| `date`     | `string` | `"Jun 5, 2026 · 10:00 AM PT"` |
-| `location` | `string` | `"Online"`                    |
-| `accent`   | `string` | `"#f59e0b"`                   |
+| Prop       | Type     | Default |
+| ---------- | -------- | ------- |
+| `label`    | `string` | `-`     |
+| `brand`    | `string` | `-`     |
+| `title`    | `string` | `-`     |
+| `date`     | `string` | `-`     |
+| `location` | `string` | `-`     |
+| `accent`   | `string` | `-`     |

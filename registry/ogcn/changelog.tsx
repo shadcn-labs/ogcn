@@ -8,26 +8,22 @@
  */
 
 export interface ChangelogProps {
-  version?: string;
-  date?: string;
-  title?: string;
+  version: string;
+  date: string;
+  title: string;
   /** Up to ~4 highlight lines. */
-  items?: string[];
-  brand?: string;
+  items: string[];
+  brand: string;
   accent?: string;
 }
 
 export const Changelog = ({
-  version = "v2.0",
-  date = "June 2026",
-  title = "What's new",
-  items = [
-    "Seven new OG image components",
-    "Live in-browser previews",
-    "One-line shadcn install",
-  ],
-  brand = "ogcn",
-  accent = "#34d399",
+  version,
+  date,
+  title,
+  items,
+  brand,
+  accent,
 }: ChangelogProps) => (
   <div
     style={{
@@ -133,3 +129,16 @@ export const Changelog = ({
     </div>
   </div>
 );
+
+Changelog.previewProps = {
+  accent: "#34d399",
+  brand: "ogcn",
+  date: "June 2026",
+  items: [
+    "Seven new OG image components",
+    "Live in-browser previews",
+    "One-line shadcn install",
+  ],
+  title: "What's new",
+  version: "v2.0",
+} satisfies ChangelogProps;

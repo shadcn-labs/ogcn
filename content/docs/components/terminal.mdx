@@ -6,7 +6,7 @@ description: A minimal, technical Open Graph image with a wordmark and accent si
 import { Terminal } from "@/registry/ogcn/terminal";
 
 <ComponentPreview hideCode>
-  <Terminal />
+  <Terminal {...Terminal.previewProps} />
 </ComponentPreview>
 
 ## Installation
@@ -64,9 +64,9 @@ export function GET() {
 
 ### Terminal
 
-| Prop      | Type     | Default                        |
-| --------- | -------- | ------------------------------ |
-| `brand`   | `string` | `"ogcn"`                       |
-| `title`   | `string` | `"Ship beautiful OG images"`   |
-| `caption` | `string` | `"npx shadcn@latest add ogcn"` |
-| `accent`  | `string` | `"#22c55e"`                    |
+| Prop      | Type     | Default |
+| --------- | -------- | ------- |
+| `brand`   | `string` | `-`     |
+| `title`   | `string` | `-`     |
+| `caption` | `string` | `-`     |
+| `accent`  | `string` | `-`     |

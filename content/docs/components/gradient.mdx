@@ -6,7 +6,7 @@ description: A bold Open Graph image with a vibrant gradient backdrop and a fros
 import { Gradient } from "@/registry/ogcn/gradient";
 
 <ComponentPreview hideCode>
-  <Gradient />
+  <Gradient {...Gradient.previewProps} />
 </ComponentPreview>
 
 ## Installation
@@ -60,9 +60,9 @@ export function GET() {
 
 ### Gradient
 
-| Prop          | Type     | Default                               |
-| ------------- | -------- | ------------------------------------- |
-| `label`       | `string` | `"Announcing"`                        |
-| `title`       | `string` | `"Ship a stunning social card"`       |
-| `description` | `string` | A short supporting line.              |
-| `gradient`    | `string` | A purple → pink → amber CSS gradient. |
+| Prop          | Type     | Default |
+| ------------- | -------- | ------- |
+| `label`       | `string` | `-`     |
+| `title`       | `string` | `-`     |
+| `description` | `string` | `-`     |
+| `gradient`    | `string` | `-`     |

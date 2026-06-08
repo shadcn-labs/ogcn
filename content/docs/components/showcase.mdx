@@ -6,7 +6,7 @@ description: A product-showcase Open Graph image with a centered headline above 
 import { Showcase } from "@/registry/ogcn/showcase";
 
 <ComponentPreview hideCode>
-  <Showcase />
+  <Showcase {...Showcase.previewProps} />
 </ComponentPreview>
 
 ## Installation
@@ -64,9 +64,9 @@ export function GET() {
 
 ### Showcase
 
-| Prop       | Type     | Default                       |
-| ---------- | -------- | ----------------------------- |
-| `title`    | `string` | `"Run your business smarter"` |
-| `subtitle` | `string` | A short supporting line.      |
-| `url`      | `string` | `"app.ogcn.dev"`              |
-| `accent`   | `string` | `"#6366f1"`                   |
+| Prop       | Type     | Default |
+| ---------- | -------- | ------- |
+| `title`    | `string` | `-`     |
+| `subtitle` | `string` | `-`     |
+| `url`      | `string` | `-`     |
+| `accent`   | `string` | `-`     |

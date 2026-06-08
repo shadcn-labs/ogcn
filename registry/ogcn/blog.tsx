@@ -9,12 +9,12 @@
  */
 
 export interface BlogProps {
-  category?: string;
-  title?: string;
-  excerpt?: string;
-  author?: string;
+  category: string;
+  title: string;
+  excerpt: string;
+  author: string;
   /** Meta line shown next to the author (e.g. date · read time). */
-  meta?: string;
+  meta: string;
   /** Optional avatar image URL. Falls back to author initials. */
   avatar?: string;
   accent?: string;
@@ -29,13 +29,13 @@ const initials = (name: string) =>
     .toUpperCase();
 
 export const Blog = ({
-  category = "Engineering",
-  title = "How we generate social images at the edge",
-  excerpt = "A deep dive into Satori, the next/og runtime, and shipping fast cards.",
-  author = "Ada Lovelace",
-  meta = "Jun 5, 2026 · 6 min read",
+  category,
+  title,
+  excerpt,
+  author,
+  meta,
   avatar,
-  accent = "#7c3aed",
+  accent,
 }: BlogProps) => (
   <div
     style={{
@@ -131,3 +131,14 @@ export const Blog = ({
     </div>
   </div>
 );
+
+Blog.previewProps = {
+  accent: "#7c3aed",
+  author: "Ada Lovelace",
+  avatar: "",
+  category: "Engineering",
+  excerpt:
+    "A deep dive into Satori, the next/og runtime, and shipping fast cards.",
+  meta: "Jun 5, 2026 · 6 min read",
+  title: "How we generate social images at the edge",
+} satisfies BlogProps;

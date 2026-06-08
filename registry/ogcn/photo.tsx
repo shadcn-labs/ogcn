@@ -12,17 +12,12 @@
 export interface PhotoProps {
   /** Background image URL. Must be absolute when rendered on the server. */
   image?: string;
-  label?: string;
-  title?: string;
-  brand?: string;
+  label: string;
+  title: string;
+  brand: string;
 }
 
-export const Photo = ({
-  image,
-  label = "Travel",
-  title = "Chasing light across the northern coast",
-  brand = "ogcn",
-}: PhotoProps) => {
+export const Photo = ({ image, label, title, brand }: PhotoProps) => {
   const fallback =
     "linear-gradient(135deg, #0f172a 0%, #1e3a8a 45%, #7c3aed 100%)";
 
@@ -102,3 +97,10 @@ export const Photo = ({
     </div>
   );
 };
+
+Photo.previewProps = {
+  brand: "ogcn",
+  image: "",
+  label: "Travel",
+  title: "Chasing light across the northern coast",
+} satisfies PhotoProps;
