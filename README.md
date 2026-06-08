@@ -24,14 +24,13 @@
 
 ## Features
 
-- 🖼️ **OG image components** — Minimal, grid, gradient, blog, changelog, quote, and photo
 - ⚡ **Built on Satori** — Renders to real PNGs through the `next/og` runtime
+- 🎯 **Zero config** — Works out of the box with sensible defaults
 - 👀 **Live previews** — The same component renders as a faithful, scaled DOM preview
 - 🎨 **Fully customizable** — Sensible props with defaults; you own the code
 - 📦 **shadcn/ui compatible** — Uses the same registry format and CLI
 - 🧩 **Composable** — Plain React components styled with the Satori-compatible CSS subset
-- 🤖 **Agent ready** — Ships with `llms.txt`, `llms-full.txt`, and agent skill discovery endpoints
-- 🚀 **Deploy ready** — Deploy anywhere
+- 🖼️ **OG image components** — Minimal, grid, gradient, blog, changelog, quote, and photo
 
 ## Contributing
 
