@@ -19,7 +19,7 @@ export const ComponentPreview = ({
   children: ReactNode;
   className?: string;
 }) => (
-  <div className={cn("flex flex-col gap-4", className)}>
+  <div className={cn("flex min-w-0 flex-col gap-4", className)}>
     <ComponentPreviewClient>{children}</ComponentPreviewClient>
     {!hideCode && (name || src) ? (
       <ComponentSource name={name} src={src} title={title} />

@@ -37,11 +37,14 @@ export const ComponentPreviewClient = ({
 
   return (
     <div
-      className="relative w-full overflow-hidden rounded-xl border bg-background shadow-sm"
+      className="relative w-full min-w-0 overflow-hidden rounded-xl border bg-background shadow-sm"
       ref={containerRef}
       style={{ aspectRatio: `${OG_WIDTH} / ${OG_HEIGHT}` }}
     >
-      <div style={scale ? stageStyle : { ...stageStyle, visibility: "hidden" }}>
+      <div
+        className="absolute top-0 left-0"
+        style={scale ? stageStyle : { ...stageStyle, visibility: "hidden" }}
+      >
         {children}
       </div>
     </div>
