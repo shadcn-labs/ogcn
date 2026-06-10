@@ -184,6 +184,32 @@
           "target": "components/og/showcase.tsx"
         }
       ]
+    },
+    {
+      "name": "shiori",
+      "type": "registry:component",
+      "title": "Shiori",
+      "description": "A clean, minimal Open Graph image with a light cream background, an orange gradient circle logo, and a bold title beside a muted description.",
+      "files": [
+        {
+          "path": "registry/ogimagecn/shiori.tsx",
+          "type": "registry:component",
+          "target": "components/og/shiori.tsx"
+        }
+      ]
+    },
+    {
+      "name": "owner",
+      "type": "registry:component",
+      "title": "Owner",
+      "description": "A clean Open Graph image with a light background, eyebrow text, bold headline, and three rounded photos at the bottom.",
+      "files": [
+        {
+          "path": "registry/ogimagecn/owner.tsx",
+          "type": "registry:component",
+          "target": "components/og/owner.tsx"
+        }
+      ]
     }
   ]
 }

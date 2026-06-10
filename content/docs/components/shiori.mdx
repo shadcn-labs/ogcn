@@ -1,0 +1,73 @@
+---
+title: Shiori
+description: A clean, minimal Open Graph image with a light cream background, an orange gradient circle logo, and a bold title beside a muted description.
+---
+
+import { Shiori } from "@/registry/ogimagecn/shiori";
+
+<ComponentPreview hideCode>
+  <Shiori {...Shiori.previewProps} />
+</ComponentPreview>
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Command</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @ogimagecn/shiori
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="shiori" title="components/og/shiori.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { ImageResponse } from "next/og";
+
+import { Shiori } from "@/components/og/shiori";
+
+export function GET() {
+  return new ImageResponse(
+    <Shiori
+      title="Shiori"
+      description="A beautifully simple read-it-later app"
+      accent="#f97316"
+      accentSecondary="#ea580c"
+    />,
+    { width: 1200, height: 630 }
+  );
+}
+```
+
+## API Reference
+
+### Shiori
+
+| Prop              | Type     | Default |
+| ----------------- | -------- | ------- |
+| `title`           | `string` | -       |
+| `description`     | `string` | -       |
+| `accent`          | `string` | -       |
+| `accentSecondary` | `string` | -       |

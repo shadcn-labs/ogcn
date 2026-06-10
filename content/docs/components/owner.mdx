@@ -1,0 +1,77 @@
+---
+title: Owner
+description: A clean Open Graph image with a light background, eyebrow text, bold headline, and three rounded photos at the bottom.
+---
+
+import { Owner } from "@/registry/ogimagecn/owner";
+
+<ComponentPreview hideCode>
+  <Owner {...Owner.previewProps} />
+</ComponentPreview>
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Command</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @ogimagecn/owner
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="owner" title="components/og/owner.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { ImageResponse } from "next/og";
+
+import { Owner } from "@/components/og/owner";
+
+export function GET() {
+  return new ImageResponse(
+    <Owner
+      eyebrow="Meet Owner."
+      title="We make online growth easy for restaurants."
+      brand="Owner"
+      images={[
+        "https://picsum.photos/id/1005/400/400",
+        "https://picsum.photos/id/1012/400/400",
+        "https://picsum.photos/id/1025/400/400",
+      ]}
+    />,
+    { width: 1200, height: 630 }
+  );
+}
+```
+
+## API Reference
+
+### Owner
+
+| Prop      | Type       | Default |
+| --------- | ---------- | ------- |
+| `eyebrow` | `string`   | -       |
+| `title`   | `string`   | -       |
+| `brand`   | `string`   | -       |
+| `images`  | `string[]` | -       |
