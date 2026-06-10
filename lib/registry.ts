@@ -13,7 +13,7 @@ export const readOptionalFromRoot = async (
 };
 
 export const getRegistryUiSourceCandidates = ({ name }: { name: string }) => [
-  path.join("registry", "ogimagecn", `${name}.tsx`),
+  path.join("registry", "ogimagecn", name, "index.tsx"),
 ];
 
 export const getDemoSource = (name: string): Promise<string | null> =>
