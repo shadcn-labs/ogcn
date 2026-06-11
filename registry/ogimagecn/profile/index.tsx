@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 export interface ProfileProps {
   name: string;
   role: string;
